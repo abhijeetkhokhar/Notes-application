@@ -1,4 +1,4 @@
-import styles from "./Sidebar.module.css"
+import styles from "./Sidebar.module.css";
 const Sidebar = ({
   notes,
   onAddNote,
@@ -16,8 +16,8 @@ const Sidebar = ({
       </div>
       <div className={styles.sidebarnotes}>
         {sortedNotes.map(({ id, title, body, lastModified }, i) => (
-          <div 
-            className={`styles.sidebarnote ${id === activeNote && "active"}`} 
+          <div
+            className={`styles.sidebarnote ${id === activeNote && "active"}`}
             onClick={() => setActiveNote(id)}
           >
             <div className={styles.sidebarNoteTitle}>

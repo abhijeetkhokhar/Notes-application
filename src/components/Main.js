@@ -1,5 +1,5 @@
 import ReactMarkdown from "react-markdown";
-import styles from "./Main.module.css"
+import styles from "./Main.module.css";
 
 const Main = ({ activeNote, onUpdateNote }) => {
   const onEditField = (field, value) => {
@@ -10,7 +10,8 @@ const Main = ({ activeNote, onUpdateNote }) => {
     });
   };
 
-  if (!activeNote) return <div className={styles.noActiveNote}>No Active Note</div>;
+  if (!activeNote)
+    return <div className={styles.noActiveNote}>No Active Note</div>;
 
   return (
     <div className={styles.main}>
