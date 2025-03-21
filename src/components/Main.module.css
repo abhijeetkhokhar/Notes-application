@@ -3,11 +3,13 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease-in-out;
 }
 
 .mainNoteEdit,
 .mainNotePreview {
   height: 50vh;
+  padding: 20px;
 }
 
 .noActiveNote {
@@ -15,66 +17,89 @@
   height: 100vh;
   line-height: 100vh;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #999;
 }
 
-.mainNoteEdit {
-  padding: 25px;
-}
-
+/* Input and Textarea */
 .mainNoteEdit input,
 textarea {
   display: block;
   border: 1px solid #ddd;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   width: 100%;
-  height: calc(50vh - 130px);
   padding: 7px;
   resize: none;
-  font-size: inherit;
+  font-size: 1rem;
   font-family: inherit;
 }
 
 .mainNoteEdit input {
-  height: 50px;
-  font-size: 2rem;
-  margin-top: -14px;
+  height: 45px;
+  font-size: 1.8rem;
 }
 
+/* Preview Styles */
 .mainNotePreview {
   border-top: 1px solid #ddd;
-  overflow-y: scroll;
+  overflow-y: auto;
   background: rgba(0, 0, 0, 0.02);
 }
 
 .previewTitle {
-  padding: 25px 25px 0 25px;
+  padding: 15px 15px 0 15px;
   margin: 0;
+  font-size: 1.5rem;
 }
 
 .markdown-preview {
-  padding: 0 25px 25px 25px;
+  padding: 0 15px 15px 15px;
   font-size: 1rem;
-  line-height: 2rem;
+  line-height: 1.6rem;
+}
+
+/* Responsive Main Content */
+@media (max-width: 1024px) {
+  .main {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
   .main {
     width: 100%;
+    flex-direction: column;
+  }
+
+  .mainNoteEdit,
+  .mainNotePreview {
+    height: auto;
+    padding: 15px;
   }
 
   .noActiveNote {
     width: 100%;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .mainNoteEdit {
-    padding: 15px;
+    padding: 10px;
+  }
+
+  .mainNoteEdit input {
+    font-size: 1.5rem;
+    height: 40px;
+  }
+
+  .mainNoteEdit textarea {
+    height: 120px;
+    font-size: 0.9rem;
   }
 
   .markdown-preview {
-    padding: 15px;
+    font-size: 0.9rem;
+    padding: 10px;
   }
 }
